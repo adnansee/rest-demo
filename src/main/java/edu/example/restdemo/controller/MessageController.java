@@ -17,28 +17,26 @@ public class MessageController {
 
 
     @GetMapping()
-    public List<Message> giveMsg(){
-       return mrep.findAll();
+    public List<Message> giveMsg() {
+        return mrep.findAll();
 
     }
 
     @PostMapping
-    public void enterMsg(@RequestBody Message message){
+    public void enterMsg(@RequestBody Message message) {
         mrep.save(message);
     }
 
     @DeleteMapping("/{id}")
-    public void delMsg(@PathVariable ("id") Integer integer){
+    public void delMsg(@PathVariable("id") Integer integer) {
         mrep.deleteById(integer);
 
     }
 
     @GetMapping("/{id}")
-    public Message giveOneMessage (@PathVariable ("id") Integer integer){
+    public Message giveOneMessage(@PathVariable("id") Integer integer) {
         return mrep.findById(integer).get();
-           }
-
-
+    }
 
 
 }
