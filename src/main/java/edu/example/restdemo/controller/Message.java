@@ -1,8 +1,11 @@
 package edu.example.restdemo.controller;
 
 
+import lombok.Data;
+
 import javax.persistence.*;
 
+@Data
 @Entity
 @Table(name = "message")
 public class Message {
@@ -16,31 +19,6 @@ public class Message {
     public Message(String message, Integer id) {
         this.message = message;
         this.id = id;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public Message setId(Integer id) {
-        this.id = id;
-        return this;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    @Override
-    public String toString() {
-        return "Message{" +
-                "message='" + message + '\'' +
-                '}';
-    }
-
-    public Message setMessage(String message) {
-        this.message = message;
-        return this;
     }
 
     public Message() {
